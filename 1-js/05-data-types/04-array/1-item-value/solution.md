@@ -1,17 +1,17 @@
-The result is `4`:
+Das Ergebnis ist `4`:
 
 
 ```js run
-let fruits = ["Apples", "Pear", "Orange"];
+let fruechte = ["Apfel", "Birne", "Orange"];
 
-let shoppingCart = fruits;
+let einkaufsWagen = fruechte;
 
-shoppingCart.push("Banana");
+einkaufsWagen.push("Banane");
 
 *!*
-alert( fruits.length ); // 4
+alert( fruechte.length ); // 4
 */!*
 ```
 
-That's because arrays are objects. So both `shoppingCart` and `fruits` are the references to the same array.
+Das ist so, weil Arrays Objekte sind. Dies bedeutet, dass `einkaufsWagen` sowie `fruechte` Referenzen auf das gleiche Array sind.
 
