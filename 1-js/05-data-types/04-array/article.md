@@ -135,7 +135,7 @@ Die Methode `pop` nimmt das letzte Element vom Array weg und gibt es zurück:
     alert( fruechte ); // Apfel, Orange
     ```
 
-Die methode `push` fügt ein Element an das Ende eines Arrays hinzu:
+Die Methode `push` fügt ein Element an das Ende eines Arrays hinzu:
 
     ```js run
     let fruechte = ["Apfel", "Orange"];
