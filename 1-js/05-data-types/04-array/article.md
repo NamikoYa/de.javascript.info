@@ -17,7 +17,7 @@ let arr = new Array();
 let arr = [];
 ```
 
-Meisten wird jedoch der zweite Weg gebraucht. Wir können erste Elemente in den eckigen Klammern mitlierfern:
+Meisten wird jedoch der zweite Weg gebraucht. Wir können schon erste Elemente in den eckigen Klammern mitlierfern:
 
 ```js
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -25,7 +25,7 @@ let fruechte = ["Apfel", "Orange", "Pflaume"];
 
 Elemente in einem Array sind nummeriert, beginnend mit Null.
 
-Wir können ein Element mit seiner Nummer in eckigen Klammern bekommen:
+Wir können ein Element mit entsprechender Nummer in eckigen Klammern bekommen:
 
 ```js run
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -41,13 +41,13 @@ Wir können Elemente ersetzen:
 fruechte[2] = 'Birne'; // jetzt ["Apfel", "Orange", "Birne"]
 ```
 
-...Oder ein Neues zum Array hinzufügen:
+... Oder ein neues Element dem Array hinzufügen:
 
 ```js
 fruechte[3] = 'Zitrone'; // jetzt ["Apfel", "Orange", "Birne", "Zitrone"]
 ```
 
-Die Gesamtanzahl der Elemente in einem Array ist seine Länge (`lenght`):
+Die Gesamtanzahl der Elemente in einem Array ist gespeichert in `lenght` (Länge):
 
 ```js run
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -55,7 +55,7 @@ let fruechte = ["Apfel", "Orange", "Pflaume"];
 alert( fruechte.length ); // 3
 ```
 
-Wir können auch den `alert` benutzen, um das ganze Array anzuzeigen:
+Wir können `alert` benutzen, um das ganze Array anzeigen zu lassen:
 
 ```js run
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -63,9 +63,7 @@ let fruechte = ["Apfel", "Orange", "Pflaume"];
 alert( fruechte ); // Apfel,Orange,Pflaume
 ```
 
-Ein Array kann Element von jeglichem Typen speichern.
-
-Zum Beispiel:
+Ein Array kann Element von jeglichem Typen speichern:
 
 ```js run no-beautify
 // verschiedene Elemente
@@ -95,7 +93,7 @@ Dieser Style von den Kommas macht es einfacher Elemente hinzuzufügen/zu entfern
 
 ## Methoden pop/push, shift/unshift
 
-Die [Warteschlange](https://de.wikipedia.org/wiki/Warteschlange_(Datenstruktur)), auch "queue" genannt, ist eines von den meist benötigten Arrays. In der Informatik bedeutet das eine geordnete Sammlung von Elementen, die folgende zwei Operationen unterstützen:
+Die [Warteschlange](https://de.wikipedia.org/wiki/Warteschlange_(Datenstruktur)), auch `queue` genannt, ist eines von den meist benötigten Arrays. In der Informatik bedeutet es soviel wie eine geordnete Sammlung von Elementen. Diese unterstützt die folgenden zwei Operationen:
 
 - `push` fügt ein Element dem Ende hinzu.
 - `shift` holt ein Element vom Anfang, rückt die Warteschlange vor, damit das zweite Element das erste wird.
@@ -106,16 +104,16 @@ Arrays unterstützen beide Operationen.
 
 In praktischer Hinsicht brachen wir das sehr oft. Zum Beispiel, wenn eine Warteschlange bestehend aus Nachrichten auf dem Bildschirm angezeigt werden sollen.
 
-Ein anderer Anwendungsfall für Arrays ist die Datenstruktur namens [Stapelspeicher](https://de.wikipedia.org/wiki/Stapelspeicher), auch "stack" genannt.
+Ein anderer Anwendungsfall für Arrays ist die Datenstruktur namens [Stapelspeicher](https://de.wikipedia.org/wiki/Stapelspeicher), auch `stack` genannt.
 
-Es unterstützt zwei Operationen:
+Dies unterstützt zwei Operationen:
 
 - `push` fügt ein Element dem Ende hinzu.
 - `pop` nimmt ein Element weg vom Ende.
 
 In diesem Fall werden immer neue Elemente am Ende hinzugefügt oder weggenommen.
 
-Ein Stapelspeicher ist meistens als Kartenstapel dargestellt: neue Karten werden oben hinzugefügt oder weggenommen:
+Ein Stapelspeicher ist meistens als Kartenstapel dargestellt, neue Karten werden oben hinzugefügt oder weggenommen:
 
 ![](stack.svg)
 
@@ -123,13 +121,11 @@ In einem Stapelspeicher wird das letzte Element, das hineingeschoben wurde, als 
 
 Arrays funktionieren in JavaScript mit beiden Varianten, ob als Warteschlange oder als Stapelspeicher. Sie erlauben dir Elemente hinzuzufügen/wegzunehmen vom Anfang sowie vom Ende.
 
-Die Datenstruktur, die dies erlaubt wird in der Informatik [Deque](https://de.wikipedia.org/wiki/Deque).
+Die Datenstruktur, die dies erlaubt wird in der Informatik [Deque](https://de.wikipedia.org/wiki/Deque) genannt.
 
 **Methoden, die mit dem Ende von Arrays arbeiten:**
 
-`pop`
-: Nimmt das letzte Element vom Array weg und gibt es zurück:
-: Extracts the last element of the array and returns it:
+Die Methode `pop` nimmt das letzte Element vom Array weg und gibt es zurück:
 
     ```js run
     let fruechte = ["Apfel", "Orange", "Birne"];
@@ -139,8 +135,7 @@ Die Datenstruktur, die dies erlaubt wird in der Informatik [Deque](https://de.wi
     alert( fruechte ); // Apfel, Orange
     ```
 
-`push`
-: Fügt ein Element an das Ende eines Arrays hinzu:
+Die methode `push` fügt ein Element an das Ende eines Arrays hinzu:
 
     ```js run
     let fruechte = ["Apfel", "Orange"];
@@ -154,8 +149,7 @@ Die Datenstruktur, die dies erlaubt wird in der Informatik [Deque](https://de.wi
 
 **Methoden, die mit dem Anfang vom Array arbeiten:**
 
-`shift`
-: Nimmt das este Element vom Array weg und gibt es zurück:
+Die Methode `shift` nimmt das este Element vom Array weg und gibt es zurück:
 
     ```js
     let fruechte = ["Apfel", "Orange", "Birne"];
@@ -165,8 +159,7 @@ Die Datenstruktur, die dies erlaubt wird in der Informatik [Deque](https://de.wi
     alert( fruechte ); // Orange, Birne
     ```
 
-`unshift`
-: Fügt ein Element an den Anfang eines Arrays hinzu
+Die Methode `unshift` fügt ein Element an den Anfang eines Arrays hinzu
 
     ```js
     let fruechte = ["Orange", "Birne"];
@@ -191,11 +184,11 @@ alert( fruechte );
 ## Internes
 
 Ein Array is eine spezielle Art von Objekt. Die eckigen Klammern, durch die man Zugang zu den Eigenschaften hat `arr[0]`, kommen ursprünglich von der Syntax eines Objektes.
-Grundsätzlich ist dies das Gleiche wie `obj[schlüssel]`, bei dem `arr` das Object ist und die Nummern den Schlüssel darstellen.
+Grundsätzlich ist dies das Gleiche wie `obj[key]`, bei dem `arr` das Object ist und die Nummern den Schlüssel (key) darstellen.
 
 Sie erweitern Objekte, in dem sie spezielle Methoden bereitstellen, die mit geordneten Sammlungen von Daten sowie auch mit der Eigenschaft `lenght`arbeiten können. Im Kern sind sie jedoch immer noch Objekte.
 
-Denke daran, es existieren nur 7 Grundtypen in JavaScrupt. Arrays sind Objekte und verhalten sich dementsprechend auch wie Objekte.
+Denke daran, es existieren nur 7 Grundtypen in JavaScript. Arrays gehören zu den Objekte und verhalten sich dementsprechend auch wie Objekte.
 
 Zum Beispiel wird von Referenzen kopiert:
 
@@ -211,7 +204,7 @@ arr.push("Birne"); // ändern des Arrays nach Referenz
 alert( fruechte ); // Banane, Birne - jetzt zwei Elemente
 ```
 
-...Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im dem fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch andere Optimisationen, um die Funktion von Arrays zu verschnellern.
+... Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch andere Optimisationen, um die Funktion von Arrays zu verschnellern.
 
 Aber sobald wir aufhören mit Arrays als "geordnete Sammlung" zu arbeiten und anfangen sie als normales Objekt zu benutzen, funktionieren diese Optimisationen nicht mehr.
 
@@ -225,25 +218,27 @@ fruechte[99999] = 5; // eine Eigenschaft einem index zuordnen, der nicht in sein
 fruechte.alter = 25; // eine Eigenschaft erstellen mit einem beliebigen Namen
 ```
 
-Dies ist möglich, das Arrays ursprünglich Objekte sind. Wir können irgendwelche Eigenschaften hinzufügen.
+Dies ist möglich, weil Arrays ursprünglich Objekte sind. Wir können irgendwelche Eigenschaften hinzufügen.
 
-Jedoch erkennt der Engine, dass wir Arrays als normale Objekte gebrauchen. Da die Optimisationen nur spezifisch für Arrays erstellt wurden, werden diese dann abgestellt und die Vorteile von Arrays verschwinden.
+Jedoch erkennt der Engine, dass wir Arrays als normale Objekte gebrauchen. Da die Optimisationen nur spezifisch für Arrays erstellt wurden, werden diese bei solch einem falschen Gebrauch abgestellt und die Vorteile von Arrays verschwinden.
 
-Wege, um Arrays falsch zu verwenden:
+Arten wie man Arrays falsch verwenden kann:
 
-- Hinzufügen von nichtnumerischen Eigenschaften, beispielsweise `arr.test = 5`
-- Löcher in den Arrays lassen, wie zum Beispiel: hinzufügen von `arr[0]` und dann `arr[1000]` (nichts dazwischen füllen).
-- Reverses Auffüllen der Arrays, beispielsweise `arr[1000]`, `arr[999]` und so weiter.
+- Hinzufügen von nichtnumerischen Eigenschaften: `arr.test = 5`
+- Löcher in den Arrays lassen: hinzufügen von `arr[0]` und dann `arr[1000]` (nichts dazwischen füllen)
+- Reverses Auffüllen der Arrays: `arr[1000]`, `arr[999]` und so weiter
 
 Bitte denke immer daran: Arrays sind spezielle Strukturen, um mit *geordneten Daten* zu arbeiten. Sie stellen spezielle Methoden dafür bereit. Arrays sind sorgfälltig abgestimmt im JavaScript Engine, um ebben mit fortlaufenden geordneten Daten zu arbeiten. Also bitte brauche Arrays auch dafür. Und falls du beliebige Schlüssel brauchst: Die Chancen stehen hoch, dass du nur ein normales Objekt benötigst `{}` und kein Array.
 
 ## Leistung
 
-Die Methoden `push/pop` laufen schnell, währen `shift/unshift` sind langsam.
+Die Methoden `push/pop` laufen schnell, während `shift/unshift` langsam sind.
 
 ![](array-speed.svg)
 
-Warum ist es schneller mit den Enden von Arrays zu arbeiten als mit dem Anfang? Lass uns zuerst verstehen, was genau passiert während der Durchführung:
+Warum ist es schneller mit dem Ende von einem Array zu arbeiten als mit dem Anfang?
+
+Lass uns zuerst verstehen, was denn genau passiert während der Durchführung von den Methoden:
 
 ```js
 fruechte.shift(); // nimm 1 Element vom Anfang weg
@@ -261,9 +256,11 @@ Die Operation `shift` muss 3 Dinge tun:
 
 **Je mehr Elemente in einem Array, desto mehr Zeit wird aufgewendet für die Verschiebung, mehr Speicheroperationen.**
 
-Etwas Ähnliches passiert mit der Methode `unshift`: um Elemente an den Anfang hinzuzufügen, müssen wir die schon existierenden Elemente nach rechts verschieben, also deren Index erhöhen.
+Etwas Ähnliches passiert mit der Methode `unshift`. Um Elemente an den Anfang hinzuzufügen, müssen wir die schon existierenden Elemente nach rechts verschieben, also deren Index erhöhen.
 
-Und was ist mit `push/pop`? Bei denen muss gar nichts verschoben werden. Um ein Element vom Ende eines Arrays wegzunehmen, muss lediglich der entsprechende Index gelöscht und die Eigenschaft `lenght` gekürzt werden. Bei `push` genau das umgekehrte.
+Und was ist mit `pop/push`?
+
+Bei denen muss gar nichts verschoben werden. Um ein Element vom Ende eines Arrays wegzunehmen/hinzuzufügen, muss lediglich der entsprechende Index gelöscht/erstellt und die Eigenschaft `lenght` aktualisiert werden.
 
 Das Vorgehen für die Operation `pop`:
 
@@ -279,7 +276,7 @@ Dies ist ähnlich mit der Methode `push`.
 
 ## Loops
 
-Eine der ältesten Arten durch die Werte von einem Array zu gehen, ist der Loop `for` über die Indexe.
+Eine der ältesten Arten über die Werte von einem Array zu iterieren, ist der Loop `for` über die Indexe.
 
 ```js run
 let arr = ["Apfel", "Orange", "Birne"];
@@ -291,7 +288,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 ```
 
-Es gibt auch noch eine andere Art von Loop, nämlich `for..off`:
+Es gibt auch noch eine andere Art von Loop, nämlich `for..of`:
 
 ```js run
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -304,7 +301,7 @@ for (let frucht of fruechte) {
 
 Der Loop `for..of` gibt nur Zugriff auf die Werte und nicht die entsprechende Nummern. Meistens reicht dies jedoch aus und es bereitet weniger Arbeit.
 
-Es besteht auch die Möglichkeit `for..in` zu benutzen, weil Arrays eigentlich Objekte sind:
+Es besteht auch die Möglichkeit `for..in` zu benutzen, da Arrays ja eigentlich Objekte sind:
 
 ```js run
 let arr = ["Apfel", "Orange", "Birne"];
@@ -315,22 +312,22 @@ for (let key in arr) {
   alert( arr[key] ); // Apfel, Orange, Birne
 }
 ```
-Aber das ist eine schlechte Idee, denn es gibt potentiel Probleme damit:
+Aber das ist eine schlechte Idee, denn es könnte potentielle Probleme damit geben:
 
 1. Der Loop `for..in` iteriert über *alle Eigenschaften*, nicht nur die Nummerierten.
 
-    Es gibt sogenannte "array-ähnliche" Objekte im Browser und anderen Umgebungen, welche wie *Arrays aussehen*. Das heisst, sie haben `lenght` und indexe als Eigenschaften, aber könnten auch andere nichtnumerischen Eigenschaften und Methoden enthalten, welche wir normalerweise nicht brauchen. Der Loop `for..in` wird diese jedoch auflisten. Also falls wir mit "array-ähnlichen" Objekten arbeiten müssen, dann diese "extra" Eigenschaften könnten ein Problem werden.
+    Es gibt sogenannte "array-ähnliche" Objekte im Browser und anderen Umgebungen, welche wie *Arrays aussehen*. Das heisst, sie haben `lenght` und Indexe als Eigenschaften, aber könnten auch andere nichtnumerischen Eigenschaften und Methoden enthalten, welche wir normalerweise nicht brauchen. Der Loop `for..in` wird diese jedoch auflisten. Also falls wir mit "array-ähnlichen" Objekten arbeiten müssen, dann diese "extra" Eigenschaften könnten ein Problem werden.
 
-2. Der Loop `for..in` ist optimiert für generelle Ojekte, nicht Arrays und ist deswegen 10-100 Mal langsamer. Ja klar, er ist immer no sehr schnell. Es spielt viellicht nur eine Rolle in Engpässen, aber trotzdem sollten wir uns dem Unterschied bewusst sein.
+2. Der Loop `for..in` ist optimiert für generelle Ojekte, nicht Arrays, und ist deswegen 10-100 Mal langsamer. Ja klar, er ist immer noch sehr schnell. Es spielt wahrscheinlich nur bei Engpässen eine Rolle, aber trotzdem sollten wir uns die Unterschiede im Kopf behalten.
 
 Im Allgemeinen sollten wir keine `for..in` Loops für Arrays verwenden
 
 
-## Ein Wort über "length"
+## Ein Wort über `length` (Länge)
 
 Die Eigenschaft `length` aktualisiert automatisch, sobald wir einen Array ändern. Um genau zu sein, es ist eigentlich nicht die Anzahl von Werten in einem Array sondern der grösste numerische Index plus eins.
 
-Zum Beispiel, ein einzelnes Element mit einem grossen Index gibt eine grosse `lenght`(Länge) zurück:
+Zum Beispiel, ein einzelnes Element mit einem grossen Index gibt eine grosse `lenght` zurück:
 
 ```js run
 let fruechte = [];
@@ -343,7 +340,7 @@ Bedenke, dass wir normalerweise Arrays nicht wie hier gezeigt benutzen.
 
 Etwas anderes Interessantes über die Eigenschaft `lenght`: Es ist schreibbar.
 
-Wenn wir es manuell erhöhen, nichts Spezielles passiert. Wenn wir es jedoch verringern, wird der Array gekürzt. Dieser Prozess kann man nicht wieder Rückgängig machen. Hier ist ein Beispiel:
+Wenn wir es manuell erhöhen, nichts Spezielles passiert. Wenn wir es jedoch verringern, wird das Array gekürzt. Dieser Prozess kann man nicht wieder Rückgängig machen. Hier ist ein Beispiel:
 
 ```js run
 let arr = [1, 2, 3, 4, 5];
@@ -370,7 +367,7 @@ Dies wird eher selten verwenden, weil die eckigen Klammer kürzer sind. Auch bri
 
 Wenn `new Array` mit einem einzigen Argument (also eine Nummer) aufgerufen wird, erstellt es ein Array *ohne Werte, aber mit der gegebenen Länge*.
 
-Lasst uns verstehen wie man sich dadurch selbst ins Knie schiessen kann:
+Ein Beispiel wie man sich dadurch selbst ins Knie schiessen kann:
 
 ```js run
 let arr = new Array(2); // Wird es ein Array mit [2] erstellen?
@@ -382,11 +379,11 @@ alert( arr.length ); // length 2
 
 Im Code oben, `new Array(Nummer)` sind alle Elemente `undefined`.
 
-Um solch einer Überrachung aus dem Wege zu gehen, werden eckige Klammern benutzt, ausser wir wissen wirklick was wir genau tun.
+Um solch einer Überraschung aus dem Wege zu gehen, werden eckige Klammern benutzt, ausser wir wissen wirklich was wir tun.
 
 ## Multidimensionale Arrays
 
-Arrays können Elemente enthalten, die ebenfalls Arrays sind. Dies können wir gebruachen, um multidimensional Arrays zu erstellen. So können wir zum Beispeil Matrize speichern:
+Arrays können Elemente enthalten, die ebenfalls Arrays sind. Dies können wir gebrauchen, um multidimensionale Arrays zu erstellen. So können wir zum Beispeil Matrize speichern:
 
 ```js run
 let matrix = [
@@ -402,7 +399,7 @@ alert( matrix[1][1] ); // 5, das Element in der Mitte
 
 Array haben ihre eigene Implementation von der Methode `toString`, welche eine Liste von Elementen unterteilt durch Kommas zurückgibt.
 
-For instance:
+Beispiel:
 
 
 ```js run
@@ -420,7 +417,7 @@ alert( [1] + 1 ); // "11"
 alert( [1,2] + 1 ); // "1,21"
 ```
 
-Arrays haben kein `Symbol.toPrimitive` sowie auch nicht eine Viabek `valueOf`. Sie implementieren nur Konversationen mit `toString`, deswegen wird hier `[]` ein leerer String, `[1]` wird eine `"1"` und `[1,2]` wird `"1,2"`.
+Arrays haben kein `Symbol.toPrimitive` sowie auch nicht ein viabels `valueOf`. Sie implementieren nur Konversationen mit `toString`, deswegen wird hier `[]` ein leerer String, `[1]` wird eine `"1"` und `[1,2]` wird `"1,2"`.
 
 Wenn der binäre Plus `"+"` Operator etwas zu einem String hinzufügt, konvertiert es dies ebenso in einen String, heisst der nächste Schritt sieht aus wie folgt:
 
@@ -456,7 +453,7 @@ Wir können Arrays als ein Deque mit folgenden Operatoren gebrauchen:
 - `shift()` entfernt Element vom Anfang und gibt es zurück.
 - `unshift(...Werte)` fügt `Werte` an den Anfang hinzu.
 
-Um durch die Elemente von einem Array zu iterieren:
+Um über die Elemente von einem Array zu iterieren:
   - `for (let i=0; i<arr.length; i++)` -- ist am Schnellsten, kompatibel mit alten Browsern
   - `for (let item of arr)` -- die moderne Syntax nur für die Werte
   - `for (let i in arr)` -- niemals gebrauchen
