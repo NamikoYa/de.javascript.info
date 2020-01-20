@@ -9,7 +9,7 @@ Was wird dieser Code zeigen?
 ```js
 let fruechte = ["Apfel", "Birne", "Orange"];
 
-// füge ein neuer Wert der "Kopie" hinzu
+// Füge ein neuer Wert der "Kopie" hinzu
 let einkaufsWagen = fruechte;
 einkaufsWagen.push("Banane");
 
