@@ -147,7 +147,7 @@ Die Methode `push` fügt ein Element an das Ende eines Arrays hinzu:
 
     Der Aufruf `fruechte.push(...)` ist gleichwertig zu `fruechte[fruechte.length] = ...`.
 
-**Methoden, die mit dem Anfang vom Array arbeiten:**
+**Methoden, die mit dem Anfang von Arrays arbeiten:**
 
 Die Methode `shift` nimmt das este Element vom Array weg und gibt es zurück:
 
