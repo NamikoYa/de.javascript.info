@@ -2,7 +2,7 @@ Wichtigkeit: 4
 
 ---
 
-# sumInput() Nummern
+# Summe der eingegebenen Nummern
 
 Schreibe die Funktion `sumInput()` so, dass:
 
