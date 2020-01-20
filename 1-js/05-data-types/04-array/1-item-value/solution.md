@@ -13,5 +13,4 @@ alert( fruechte.length ); // 4
 */!*
 ```
 
-Das ist so, weil Arrays Objekte sind. Dies bedeutet, dass `einkaufsWagen` sowie `fruechte` Referenzen auf das gleiche Array sind.
-
+Dies funktioniert, weil Arrays Objekte sind. Das bedeutet, dass `einkaufsWagen` sowie `fruechte` Referenzen auf das gleiche Array sind.
