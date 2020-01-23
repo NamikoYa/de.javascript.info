@@ -1,19 +1,19 @@
-importance: 2
+Wichtigkeit: 2
 
 ---
 
-# A maximal subarray
+# Ein maximales Subarray
 
-The input is an array of numbers, e.g. `arr = [1, -2, 3, 4, -9, 6]`.
+Die Eingabe ist ein Array gefüllt mit Nummern, bsp. `arr = [1, -2, 3, 4, -9, 6]`.
 
-The task is: find the contiguous subarray of `arr` with the maximal sum of items.
+Die Aufgabe lautet: Finde die benachbarten Subarrays von `arr` mit der maximalen Summe aller Elemente.
 
-Write the function `getMaxSubSum(arr)` that will return that sum.
+Brauche die Funktion `getMaxSubSum(arr)` für die Berechnung der Summe.
 
-For instance: 
+Beispiel: 
 
 ```js
-getMaxSubSum([-1, *!*2, 3*/!*, -9]) = 5 (the sum of highlighted items)
+getMaxSubSum([-1, *!*2, 3*/!*, -9]) = 5 (Summe von hervorgehobenen Elementen)
 getMaxSubSum([*!*2, -1, 2, 3*/!*, -9]) = 6
 getMaxSubSum([-1, 2, 3, -9, *!*11*/!*]) = 11
 getMaxSubSum([-2, -1, *!*1, 2*/!*]) = 3
@@ -21,10 +21,10 @@ getMaxSubSum([*!*100*/!*, -9, 2, -3, 5]) = 100
 getMaxSubSum([*!*1, 2, 3*/!*]) = 6 (take all)
 ```
 
-If all items are negative, it means that we take none (the subarray is empty), so the sum is zero:
+Wenn alle Elemente negativ sind, nehmen wir keine (Subarray ist leer), dewegen ist die Summe dann null:
 
 ```js
 getMaxSubSum([-1, -2, -3]) = 0
 ```
 
-Please try to think of a fast solution: [O(n<sup>2</sup>)](https://en.wikipedia.org/wiki/Big_O_notation) or even O(n) if you can.
+Bitte versuche eine schnelle, effiziente Lösung zu finden: [O(n<sup>2</sup>)](https://de.wikipedia.org/wiki/Landau-Symbole) oder sogar O(n), wenn du kannst.
