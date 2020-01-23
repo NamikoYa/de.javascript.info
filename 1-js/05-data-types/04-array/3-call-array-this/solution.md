@@ -13,4 +13,3 @@ arr[2](); // "a","b",function
 ```
 
 Das Array hat 3 Werte: ursprünglich hatte es zwei, plus die Funktion.
-The array has 3 values: initially it had two, plus the function. 
