@@ -33,7 +33,7 @@ Beispiel für `[-1, 2, 3, -9, 11]`:
 11
 ```
 
-Der Code ist eigentlich ein verschachtelter Loop: Ein externer Loop über die Array Elemente und das interne Zählen der Subsummen vom momentanen Element.
+Der Code ist eigentlich ein verschachtelter Loop: Ein externer Loop über die Elemente des Arrays und das interne Zählen der Subsummen vom momentanen Element.
 
 ```js run
 function getMaxSubSum(arr) {
