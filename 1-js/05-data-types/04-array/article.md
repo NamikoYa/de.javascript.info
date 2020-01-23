@@ -349,7 +349,7 @@ arr.length = 2; // verkürzt um 2 Elemente
 alert( arr ); // [1, 2]
 
 arr.length = 5; // length wieder zurücksetzen
-alert( arr[3] ); // undefined: der Wert kann nicht wiedergegeben werden
+alert( arr[3] ); // undefined: Wert kann nicht wiedergegeben werden
 ```
 
 Also, der einfachste Weg einen Array zu leeren, ist: `arr.lenght = 0;`
@@ -372,7 +372,7 @@ Ein Beispiel wie man sich dadurch selbst ins Knie schiessen kann:
 ```js run
 let arr = new Array(2); // Wird es ein Array mit [2] erstellen?
 
-alert( arr[0] ); // undefined! kein Element darin vorhanden
+alert( arr[0] ); // undefined! Kein Element darin vorhanden
 
 alert( arr.length ); // length 2
 ```
