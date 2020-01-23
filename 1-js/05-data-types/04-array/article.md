@@ -1,10 +1,10 @@
 # Arrays
 
-Objekte erlauben dir eine Sammlung von Werten mit Schlüssel zu speichern. Das ist gut soweit.
+Objekte erlauben dir eine Sammlung von Werten mit Schlüsseln zu speichern. Das ist gut soweit.
 
-Jedoch brauchen wir oft eine *geordnete Sammlung*, bei der wir ein erstes, zweites, drittes, ... Element haben. Zum Beispiel können wir dies gebrauchen, um eine Liste von etwas zu speichern: Benutzer, Güter, HTML Elemente, etc.
+Jedoch brauchen wir oft eine *geordnete Sammlung*, bei der wir ein erstes, zweites, drittes, ... Element haben. Wir können dies beispielsweise für das Speichern einer Liste von etwas gebrauchen: Benutzer, Güter, HTML Elemente, etc.
 
-In dieser Situation wäre ein Objekt ungeeignet, da es keine Methode bereitstellt, um die Reihenfolge der Elemente zu verwalten. Wir können keine neue Eigenschaft "zwischen" schon existierenden Eigenschaften einfügen. Objekte sind für solche einen Gebrauch einfach nicht gedacht.
+In dieser Situation wäre ein Objekt ungeeignet, da es keine Methode bereitstellt, um die Reihenfolge der Elemente zu verwalten. Wir können keine neuen Eigenschaften "zwischen" schon existierenden Eigenschaften einfügen. Objekte sind für solch einen Gebrauch einfach nicht gedacht.
 
 Es existiert eine spezielle Datenstruktur namens `Array`, um geordnete Sammlungen zu speichern.
 
@@ -17,7 +17,7 @@ let arr = new Array();
 let arr = [];
 ```
 
-Meisten wird jedoch der zweite Weg gebraucht. Wir können schon erste Elemente in den eckigen Klammern mitlierfern:
+Meisten wird jedoch der zweite Weg gebraucht. Hier können wir schon erste Elemente in den eckigen Klammern mitlierfern:
 
 ```js
 let fruechte = ["Apfel", "Orange", "Pflaume"];
@@ -63,7 +63,7 @@ let fruechte = ["Apfel", "Orange", "Pflaume"];
 alert( fruechte ); // Apfel,Orange,Pflaume
 ```
 
-Ein Array kann Element von jeglichem Typen speichern:
+Ein Array kann Elemente von jeglichem Typen speichern:
 
 ```js run no-beautify
 // verschiedene Elemente
@@ -159,7 +159,7 @@ Die Methode `shift` nimmt das este Element vom Array weg und gibt es zurück:
     alert( fruechte ); // Orange, Birne
     ```
 
-Die Methode `unshift` fügt ein Element an den Anfang eines Arrays hinzu
+Die Methode `unshift` fügt ein Element an den Anfang eines Arrays hinzu:
 
     ```js
     let fruechte = ["Orange", "Birne"];
@@ -184,7 +184,7 @@ alert( fruechte );
 ## Internes
 
 Ein Array is eine spezielle Art von Objekt. Die eckigen Klammern, durch die man Zugang zu den Eigenschaften hat `arr[0]`, kommen ursprünglich von der Syntax eines Objektes.
-Grundsätzlich ist dies das Gleiche wie `obj[key]`, bei dem `arr` das Object ist und die Nummern den Schlüssel (key) darstellen.
+Grundsätzlich ist dies das Gleiche wie `obj[key]`, bei dem das `arr` das Object ist und die Nummern den Schlüssel (key) darstellen.
 
 Sie erweitern Objekte, in dem sie spezielle Methoden bereitstellen, die mit geordneten Sammlungen von Daten sowie auch mit der Eigenschaft `lenght`arbeiten können. Im Kern sind sie jedoch immer noch Objekte.
 
@@ -204,7 +204,7 @@ arr.push("Birne"); // ändern des Arrays nach Referenz
 alert( fruechte ); // Banane, Birne - jetzt zwei Elemente
 ```
 
-... Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch andere Optimisationen, um die Funktion von Arrays zu verschnellern.
+... Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch weitere Optimisationen, um Arrays noch viel schneller zu machen.
 
 Aber sobald wir aufhören mit Arrays als "geordnete Sammlung" zu arbeiten und anfangen sie als normales Objekt zu benutzen, funktionieren diese Optimisationen nicht mehr.
 
@@ -225,7 +225,7 @@ Jedoch erkennt der Engine, dass wir Arrays als normale Objekte gebrauchen. Da di
 Arten wie man Arrays falsch verwenden kann:
 
 - Hinzufügen von nichtnumerischen Eigenschaften: `arr.test = 5`
-- Löcher in den Arrays lassen: hinzufügen von `arr[0]` und dann `arr[1000]` (nichts dazwischen füllen)
+- Löcher in den Arrays lassen: Hinzufügen von `arr[0]` und dann `arr[1000]` (nichts dazwischen füllen)
 - Reverses Auffüllen der Arrays: `arr[1000]`, `arr[999]` und so weiter
 
 Bitte denke immer daran: Arrays sind spezielle Strukturen, um mit *geordneten Daten* zu arbeiten. Sie stellen spezielle Methoden dafür bereit. Arrays sind sorgfälltig abgestimmt im JavaScript Engine, um ebben mit fortlaufenden geordneten Daten zu arbeiten. Also bitte brauche Arrays auch dafür. Und falls du beliebige Schlüssel brauchst: Die Chancen stehen hoch, dass du nur ein normales Objekt benötigst `{}` und kein Array.
