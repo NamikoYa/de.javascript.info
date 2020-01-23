@@ -2,7 +2,7 @@
 
 Wir können alle möglichen Subsummen berechnen.
 
-Der einfachste Weg dafür ist jedes Element zu nehmen und anfangend von dem die Summen von allen folgenden Subarrays auszurechnen.
+Der einfachste Weg dafür ist jedes Element zu nehmen und anfangend von dem die Summen von allen folgenden Subarrays zu berechnen.
 
 Beispiel für `[-1, 2, 3, -9, 11]`:
 
@@ -59,11 +59,11 @@ alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100
 
 Die Lösung hat eine Zeitkomplexität von [O(n<sup>2</sup>)](https://de.wikipedia.org/wiki/Landau-Symbole). In anderen Worten, wenn wir die Grösse des Arrays um zwei Mal vergrössern, würde dieser Algorithmus vier Mal länger brauchen.
 
-Für grosse Arrays (1000, 10000 oder mehr Elemente) solche Algorithmen führen zu grosser Trägheit.
+Solche Algorithmen führen bei grossen Arrays (1000, 10000 oder mehr Elemente) zu extremer Trägheit.
 
 # Schnelle Lösung
 
-Nehmen wir die momentale Teilsumme von Elementen in der Variabel `s`. Wenn `s` irgendwann negativ wird, weisen wir dem `s=0` zu. Das Maximum von allen solchen `s` ist schlussendlich die Antwort.
+Nehmen wir die momentane Teilsumme von Elementen in der Variabel `s`. Wenn `s` irgendwann negativ wird, weisen wir dem `s=0` zu. Das Maximum von allen diesen `s` ist schlussendlich die Antwort.
 
 Falls die Beschreibung zu vage ist, lies dich in den Code ein, er ist kurz genug:
 
@@ -91,4 +91,4 @@ alert( getMaxSubSum([-1, -2, -3]) ); // 0
 
 Dieser Algorithmus braucht genau ein Durchlauf durch ein Array, heisst die Zeitkomplexität ist O(n).
 
-Hier kannst du mehr detailiertere Informationen über den Algorithmus finden: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). Falls es dann immer noch nicht ganz klar ist warum es funktioniert, dann versuche dem Beispiel von Oben zu folgen und versuche zu verstehen wie es funktioniert. Das erklärt mehr als Worte.
+Hier kannst du mehr detailiertere Informationen über den Algorithmus finden: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). Falls es dann immer noch nicht ganz klar ist warum es so funktioniert, dann zeichne das Beispiel von Oben auf und versuche zu verstehen wie es funktioniert. Das erklärt mehr als Worte.
