@@ -1,53 +1,53 @@
-# Slow solution
+# Langsame Lösung
 
-We can calculate all possible subsums.
+Wir können alle möglichen Subsummen berechnen.
 
-The simplest way is to take every element and calculate sums of all subarrays starting from it.
+Der einfachste Weg dafür ist jedes Element zu nehmen und anfangend von dem die Summen von allen folgenden Subarrays auszurechnen.
 
-For instance, for `[-1, 2, 3, -9, 11]`:
+Beispiel für `[-1, 2, 3, -9, 11]`:
 
 ```js no-beautify
-// Starting from -1:
+// Wir starten mit -1:
 -1
 -1 + 2
 -1 + 2 + 3
 -1 + 2 + 3 + (-9)
 -1 + 2 + 3 + (-9) + 11
 
-// Starting from 2:
+// Wir starten mit 2:
 2
 2 + 3
 2 + 3 + (-9)
 2 + 3 + (-9) + 11
 
-// Starting from 3:
+// Wir starten mit 3:
 3
 3 + (-9)
 3 + (-9) + 11
 
-// Starting from -9
+// Wir starten mit -9
 -9
 -9 + 11
 
-// Starting from 11
+// Wir starten mit 11
 11
 ```
 
-The code is actually a nested loop: the external loop over array elements, and the internal counts subsums starting with the current element.
+Der Code ist eigentlich ein verschachtelter Loop: Ein externer Loop über die Array Elemente und das interne Zählen der Subsummen vom momentanen Element.
 
 ```js run
 function getMaxSubSum(arr) {
-  let maxSum = 0; // if we take no elements, zero will be returned
+  let maxSumme = 0; // nehmen wir kein Element, wird null zurückgegeben
 
   for (let i = 0; i < arr.length; i++) {
-    let sumFixedStart = 0;
+    let festerStart = 0;
     for (let j = i; j < arr.length; j++) {
-      sumFixedStart += arr[j];
-      maxSum = Math.max(maxSum, sumFixedStart);
+      festerStart += arr[j];
+      maxSumme = Math.max(maxSumme, festerStart);
     }
   }
 
-  return maxSum;
+  return maxSumme;
 }
 
 alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
@@ -57,28 +57,28 @@ alert( getMaxSubSum([1, 2, 3]) ); // 6
 alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100
 ```
 
-The solution has a time complexety of [O(n<sup>2</sup>)](https://en.wikipedia.org/wiki/Big_O_notation). In other words, if we increase the array size 2 times, the algorithm will work 4 times longer.
+Die Lösung hat eine Zeitkomplexität von [O(n<sup>2</sup>)](https://de.wikipedia.org/wiki/Landau-Symbole). In anderen Worten, wenn wir die Grösse des Arrays um zwei Mal vergrössern, würde dieser Algorithmus vier Mal länger brauchen.
 
-For big arrays (1000, 10000 or more items) such algorithms can lead to a serious sluggishness.
+Für grosse Arrays (1000, 10000 oder mehr Elemente) solche Algorithmen führen zu grosser Trägheit.
 
-# Fast solution
+# Schnelle Lösung
 
-Let's walk the array and keep the current partial sum of elements in the variable `s`. If `s` becomes negative at some point, then assign `s=0`. The maximum of all such `s` will be the answer.
+Nehmen wir die momentale Teilsumme von Elementen in der Variabel `s`. Wenn `s` irgendwann negativ wird, weisen wir dem `s=0` zu. Das Maximum von allen solchen `s` ist schlussendlich die Antwort.
 
-If the description is too vague, please see the code, it's short enough:
+Falls die Beschreibung zu vage ist, lies dich in den Code ein, er ist kurz genug:
 
 ```js run demo
 function getMaxSubSum(arr) {
-  let maxSum = 0;
-  let partialSum = 0;
+  let maxSumme = 0;
+  let teilSumme = 0;
 
-  for (let item of arr) { // for each item of arr
-    partialSum += item; // add it to partialSum
-    maxSum = Math.max(maxSum, partialSum); // remember the maximum
-    if (partialSum < 0) partialSum = 0; // zero if negative
+  for (let item of arr) { // für jedes Element von arr
+    teilSumme += item; // zur Teilsumme dazuzählen
+    maxSumme = Math.max(maxSumme, teilSumme); // das Maximum behalten
+    if (teilSumme < 0) teilSumme = 0; // auf null setzen, falls negativ
   }
 
-  return maxSum;
+  return maxSumme;
 }
 
 alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
@@ -89,6 +89,6 @@ alert( getMaxSubSum([1, 2, 3]) ); // 6
 alert( getMaxSubSum([-1, -2, -3]) ); // 0
 ```
 
-The algorithm requires exactly 1 array pass, so the time complexity is O(n).
+Dieser Algorithmus braucht genau ein Durchlauf durch ein Array, heisst die Zeitkomplexität ist O(n).
 
-You can find more detail information about the algorithm here: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). If it's still not obvious why that works, then please trace the algorithm on the examples above, see how it works, that's better than any words.
+Hier kannst du mehr detailiertere Informationen über den Algorithmus finden: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). Falls es dann immer noch nicht ganz klar ist warum es funktioniert, dann versuche dem Beispiel von Oben zu folgen und versuche zu verstehen wie es funktioniert. Das erklärt mehr als Worte.
