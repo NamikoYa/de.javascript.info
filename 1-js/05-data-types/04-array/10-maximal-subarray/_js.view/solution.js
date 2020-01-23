@@ -1,4 +1,4 @@
-function getMaxSubSumme(arr) {
+function getMaxSubSum(arr) {
   let maxSumme = 0;
   let teilSumme = 0;
 
