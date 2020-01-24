@@ -57,7 +57,7 @@ alert( getMaxSubSum([1, 2, 3]) ); // 6
 alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100
 ```
 
-Die Lösung hat eine Zeitkomplexität von [O(n<sup>2</sup>)](https://en.wikipedia.org/wiki/Big_O_notation). In anderen Worten, wenn wir die Grösse des Arrays um zwei Mal vergrössern, würde dieser Algorithmus vier Mal länger brauchen.
+Die Lösung hat eine Zeitkomplexität von [O(n<sup>2</sup>)](https://de.wikipedia.org/wiki/Landau-Symbole). In anderen Worten, wenn wir die Grösse des Arrays um zwei Mal vergrössern, würde dieser Algorithmus vier Mal länger brauchen.
 
 Solche Algorithmen führen bei grossen Arrays (1000, 10000 oder mehr Elemente) zu extremer Trägheit.
 
