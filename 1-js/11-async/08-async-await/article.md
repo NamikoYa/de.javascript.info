@@ -1,10 +1,10 @@
 # Async/await
 
-There's a special syntax to work with promises in a more comfortable fashion, called "async/await". It's surprisingly easy to understand and use.
+Es gibt eine spezielle Syntax namens "async/await", die das Arbeiten mit Promises angenehmer macht. Sie ist überraschend einfach zu verstehen und zu gebrauchen.
 
 ## Async functions
 
-Let's start with the `async` keyword. It can be placed before a function, like this:
+Beginnen wir mit dem Schlüsselwort `async`. Es kann vor eine Funktion gestellt werden, wie hier:
 
 ```js
 async function f() {
@@ -12,9 +12,9 @@ async function f() {
 }
 ```
 
-The word "async" before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
+Steht das Wort "async" vor einer Funktion bedeutet das lediglich: Eine Funktion gibt immer ein Promise zurück. Andere Werte sind automatisch in einem aufgelösten (resolved?????) Promise verpackt.
 
-For instance, this function returns a resolved promise with the result of `1`, let's test it:
+Zum Beispiel, diese Funktion gibt ein aufgelöstes Promise mit dem Resultat `1` zurück, testen wirs:
 
 ```js run
 async function f() {
@@ -24,7 +24,7 @@ async function f() {
 f().then(alert); // 1
 ```
 
-...We could explicitly return a promise, that would be the same:
+... Wir können explizit ein Promise zurückgeben, es wäre das Selbe:
 
 ```js run
 async function f() {
@@ -34,42 +34,42 @@ async function f() {
 f().then(alert); // 1
 ```
 
-So, `async` ensures that the function returns a promise, and wraps non-promises in it. Simple enough, right? But not only that. There's another keyword, `await`, that works only inside `async` functions, and it's pretty cool.
+Also, `async` stellt sicher, dass die Funktion ein Promise zurückgibt, und verpackt die Werte, die keine Promises sind darin ein. Einfach genug, richtig? Aber da ist mehr. Es gibt auch noch ein anderes Schlüsselwort, nämlich `await`, welches nur in einer `async` Funktion verwendet werden kann und ziemlich cool ist.
 
 ## Await
 
-The syntax:
+Die Syntax:
 
 ```js
-// works only inside async functions
-let value = await promise;
+// funktioniert nur in einer async Funktion
+let wert = await promise;
 ```
 
-The keyword `await` makes JavaScript wait until that promise settles and returns its result.
+Dieses Schlüsselwort `await` sorgt dafür, dass JavaScript auf die Beendung und den Rückgabewert des Promises wartet.
 
-Here's an example with a promise that resolves in 1 second:
+Hier ist ein Beispiel mit einem Promise, welches sich in einer Sekunde auflöst:
 ```js run
 async function f() {
 
   let promise = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("done!"), 1000)
+    setTimeout(() => resolve("Fertig!"), 1000)
   });
 
 *!*
-  let result = await promise; // wait until the promise resolves (*)
+  let result = await promise; // wartet bis das Promise alles erledigt hat (*)
 */!*
 
-  alert(result); // "done!"
+  alert(result); // "Fertig!"
 }
 
 f();
 ```
 
-The function execution "pauses" at the line `(*)` and resumes when the promise settles, with `result` becoming its result. So the code above shows "done!" in one second.
+Die Funktion "pausiert" bei der Linie `(*)`, setzt fort, sobald das Promise fertig ist und füllt `result` mit dem gewünschten Resultat ab. Deswegen zeigt der Code oben nach einer Sekunde "Fertig!" an.
 
-Let's emphasize: `await` literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn't cost any CPU resources, because the engine can do other jobs meanwhile: execute other scripts, handle events etc.
+Machen wir es noch deutlicher: `await` buchstäblich bringt JavaScript dazu auf das Promise zu warten und kann erst nach der Beendung mit dem Resultat weiterarbeiten. Es braucht dafür keine Ressourcen der CPU, da der Engine andere Arbeiten gleichzeitig erledigen kann: Scripte ausführen, Events handhaben usw.
 
-It's just a more elegant syntax of getting the promise result than `promise.then`, easier to read and write.
+Es ist schlichtweg eine elegantere Syntax, um das Result eines Promises zu bekommen als `promise.then`. Dazu noch einfacher zu lesen und gebrauchen.
 
 ````warn header="Can't use `await` in regular functions"
 If we try to use `await` in non-async function, there would be a syntax error:
