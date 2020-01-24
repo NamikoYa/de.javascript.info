@@ -27,4 +27,4 @@ Wenn alle Elemente negativ sind, nehmen wir keine (Subarray ist leer), dewegen i
 getMaxSubSum([-1, -2, -3]) = 0
 ```
 
-Bitte versuche eine schnelle, effiziente Lösung zu finden: [O(n<sup>2</sup>)](https://de.wikipedia.org/wiki/Landau-Symbole) oder sogar O(n), wenn du kannst.
+Bitte versuche eine schnelle, effiziente Lösung zu finden: [O(n<sup>2</sup>)](https://en.wikipedia.org/wiki/Big_O_notation) oder sogar O(n), wenn du kannst.
