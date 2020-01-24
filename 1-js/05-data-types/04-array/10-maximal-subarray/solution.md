@@ -91,4 +91,4 @@ alert( getMaxSubSum([-1, -2, -3]) ); // 0
 
 Dieser Algorithmus braucht genau ein Durchlauf durch ein Array, heisst die Zeitkomplexität ist O(n).
 
-Hier kannst du mehr detailiertere Informationen über den Algorithmus finden: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). Falls es dann immer noch nicht ganz klar ist warum es so funktioniert, dann zeichne das Beispiel von Oben auf und versuche zu verstehen wie es funktioniert. Das erklärt mehr als Worte.
+Hier kannst du mehr detailliertere  Informationen über den Algorithmus finden: [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem). Falls es dann immer noch nicht ganz klar ist warum es so funktioniert, dann zeichne das Beispiel von Oben auf und versuche zu verstehen wie es funktioniert. Das erklärt mehr als Worte.
