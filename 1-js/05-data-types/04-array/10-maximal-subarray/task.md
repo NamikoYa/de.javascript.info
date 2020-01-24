@@ -21,7 +21,7 @@ getMaxSubSum([*!*100*/!*, -9, 2, -3, 5]) = 100
 getMaxSubSum([*!*1, 2, 3*/!*]) = 6 (take all)
 ```
 
-Wenn alle Elemente negativ sind, nehmen wir keine (Subarray ist leer), dewegen ist die Summe dann null:
+Wenn alle Elemente negativ sind, nehmen wir keine (Subarray ist leer), dewegen ist die Summe dann Null:
 
 ```js
 getMaxSubSum([-1, -2, -3]) = 0
