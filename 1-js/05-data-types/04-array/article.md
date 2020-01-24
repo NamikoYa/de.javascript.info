@@ -1,10 +1,10 @@
 # Arrays
 
-Objekte erlauben dir eine Sammlung von Werten mit Schlüsseln zu speichern. Das ist gut soweit.
+Objekte erlauben dir eine Sammlung von Werten mit Schlüsseln zu speichern. Das ist gut so weit.
 
 Jedoch brauchen wir oft eine *geordnete Sammlung*, bei der wir ein erstes, zweites, drittes, ... Element haben. Wir können dies beispielsweise für das Speichern einer Liste von etwas gebrauchen: Benutzer, Güter, HTML Elemente, etc.
 
-In dieser Situation wäre ein Objekt ungeeignet, da es keine Methode bereitstellt, um die Reihenfolge der Elemente zu verwalten. Wir können keine neuen Eigenschaften "zwischen" schon existierenden Eigenschaften einfügen. Objekte sind für solch einen Gebrauch einfach nicht gedacht.
+In dieser Situation wäre ein Objekt ungeeignet, da es keine Methode bereitstellt, um die Reihenfolge der Elemente zu verwalten. Wir können keine neuen Eigenschaften "zwischen" schon existierenden Eigenschaften einfügen. Objekte sind für solch einen Gebrauch nicht gedacht.
 
 Es existiert eine spezielle Datenstruktur namens `Array`, um geordnete Sammlungen zu speichern.
 
@@ -93,7 +93,7 @@ Dieser Style von den Kommas macht es einfacher Elemente hinzuzufügen/zu entfern
 
 ## Methoden pop/push, shift/unshift
 
-Die [Warteschlange](https://de.wikipedia.org/wiki/Warteschlange_(Datenstruktur)), auch `queue` genannt, ist eines von den meist benötigten Arrays. In der Informatik bedeutet es soviel wie eine geordnete Sammlung von Elementen. Diese unterstützt die folgenden zwei Operationen:
+Die [Warteschlange](https://de.wikipedia.org/wiki/Warteschlange_(Datenstruktur)), auch `queue` genannt, ist eines von den meist benötigten Arrays. In der Informatik bedeutet es so viel wie eine geordnete Sammlung von Elementen. Diese unterstützt die folgenden zwei Operationen:
 
 - `push` fügt ein Element dem Ende hinzu.
 - `shift` holt ein Element vom Anfang, rückt die Warteschlange vor, damit das zweite Element das erste wird.
@@ -149,7 +149,7 @@ Die Methode `push` fügt ein Element an das Ende eines Arrays hinzu:
 
 **Methoden, die mit dem Anfang von Arrays arbeiten:**
 
-Die Methode `shift` nimmt das este Element vom Array weg und gibt es zurück:
+Die Methode `shift` nimmt das erste Element vom Array weg und gibt es zurück:
 
     ```js
     let fruechte = ["Apfel", "Orange", "Birne"];
@@ -184,11 +184,11 @@ alert( fruechte );
 ## Internes
 
 Ein Array is eine spezielle Art von Objekt. Die eckigen Klammern, durch die man Zugang zu den Eigenschaften hat `arr[0]`, kommen ursprünglich von der Syntax eines Objektes.
-Grundsätzlich ist dies das Gleiche wie `obj[key]`, bei dem das `arr` das Object ist und die Nummern den Schlüssel (key) darstellen.
+Grundsätzlich ist dies das Gleiche wie `obj[key]`, bei dem das `arr` das Objekt ist und die Nummern den Schlüssel (key) darstellen.
 
-Sie erweitern Objekte, in dem sie spezielle Methoden bereitstellen, die mit geordneten Sammlungen von Daten sowie auch mit der Eigenschaft `lenght`arbeiten können. Im Kern sind sie jedoch immer noch Objekte.
+Sie erweitern Objekte, in dem sie spezielle Methoden bereitstellen, die mit geordneten Sammlungen von Daten sowie auch mit der Eigenschaft `lenght` arbeiten können. Im Kern sind sie jedoch immer noch Objekte.
 
-Denke daran, es existieren nur 7 Grundtypen in JavaScript. Arrays gehören zu den Objekte und verhalten sich dementsprechend auch wie Objekte.
+Denke daran, es existieren nur 7 Grundtypen in JavaScript. Arrays gehören zu den Objekten und verhalten sich dementsprechend auch wie Objekte.
 
 Zum Beispiel wird von Referenzen kopiert:
 
@@ -204,9 +204,9 @@ arr.push("Birne"); // ändern des Arrays nach Referenz
 alert( fruechte ); // Banane, Birne - jetzt zwei Elemente
 ```
 
-... Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch weitere Optimisationen, um Arrays noch viel schneller zu machen.
+... Aber das, was Arrays wirklich speziell macht, ist die interne Repräsentation. Der Engine versucht seine Elemente im fortlaufenden Speicherbereich zu speichern, einem nach dem anderen, wie auf den Illustrationen dargestellt. Es gibt auch noch weitere Optimierungen, um Arrays noch viel schneller zu machen.
 
-Aber sobald wir aufhören mit Arrays als "geordnete Sammlung" zu arbeiten und anfangen sie als normales Objekt zu benutzen, funktionieren diese Optimisationen nicht mehr.
+Aber sobald wir aufhören mit Arrays als "geordnete Sammlung" zu arbeiten und anfangen sie als normales Objekt zu benutzen, funktionieren diese Optimierungen nicht mehr.
 
 Zum Beispiel könnten wir dies tun:
 
@@ -220,7 +220,7 @@ fruechte.alter = 25; // eine Eigenschaft erstellen mit einem beliebigen Namen
 
 Dies ist möglich, weil Arrays ursprünglich Objekte sind. Wir können irgendwelche Eigenschaften hinzufügen.
 
-Jedoch erkennt der Engine, dass wir Arrays als normale Objekte gebrauchen. Da die Optimisationen nur spezifisch für Arrays erstellt wurden, werden diese bei solch einem falschen Gebrauch abgestellt und die Vorteile von Arrays verschwinden.
+Jedoch erkennt der Engine, dass wir Arrays als normale Objekte gebrauchen. Da die Optimierungen nur spezifisch für Arrays erstellt wurden, werden diese bei solch einem falschen Gebrauch abgestellt und die Vorteile von Arrays verschwinden.
 
 Arten wie man Arrays falsch verwenden kann:
 
@@ -228,7 +228,7 @@ Arten wie man Arrays falsch verwenden kann:
 - Löcher in den Arrays lassen: Hinzufügen von `arr[0]` und dann `arr[1000]` (nichts dazwischen füllen)
 - Reverses Auffüllen der Arrays: `arr[1000]`, `arr[999]` und so weiter
 
-Bitte denke immer daran: Arrays sind spezielle Strukturen, um mit *geordneten Daten* zu arbeiten. Sie stellen spezielle Methoden dafür bereit. Arrays sind sorgfälltig abgestimmt im JavaScript Engine, um ebben mit fortlaufenden geordneten Daten zu arbeiten. Also bitte brauche Arrays auch dafür. Und falls du beliebige Schlüssel brauchst: Die Chancen stehen hoch, dass du nur ein normales Objekt benötigst `{}` und kein Array.
+Bitte denke immer daran: Arrays sind spezielle Strukturen, um mit *geordneten Daten* zu arbeiten. Sie stellen spezielle Methoden dafür bereit. Arrays sind sorgfältig abgestimmt im JavaScript Engine, um ebben mit fortlaufenden geordneten Daten zu arbeiten. Also bitte brauche Arrays auch dafür. Und falls du beliebige Schlüssel brauchst: Die Chancen stehen hoch, dass du nur ein normales Objekt benötigst `{}` und kein Array.
 
 ## Leistung
 
@@ -244,7 +244,7 @@ Lass uns zuerst verstehen, was denn genau passiert während der Durchführung vo
 fruechte.shift(); // nimm 1 Element vom Anfang weg
 ```
 
-Da es ein Element vom Anfang wegnimmt, verschiebt sich die Ganze Reihenfolge im Array. Es wird nicht nur das Element mit der Nummer `0` entfernt sondern alle anderen Elemente müssen noch mit neuen Nummern versehen werden.
+Da es ein Element vom Anfang wegnimmt, verschiebt sich die Ganze Reihenfolge im Array. Es wird nicht nur das Element mit der Nummer `0` entfernt, sondern alle anderen Elemente müssen noch mit neuen Nummern versehen werden.
 
 Die Operation `shift` muss 3 Dinge tun:
 
@@ -312,20 +312,20 @@ for (let key in arr) {
   alert( arr[key] ); // Apfel, Orange, Birne
 }
 ```
-Aber das ist eine schlechte Idee, denn es könnte potentielle Probleme damit geben:
+Aber das ist eine schlechte Idee, denn es könnte potenzielle Probleme damit geben:
 
 1. Der Loop `for..in` iteriert über *alle Eigenschaften*, nicht nur die Nummerierten.
 
     Es gibt sogenannte "array-ähnliche" Objekte im Browser und anderen Umgebungen, welche wie *Arrays aussehen*. Das heisst, sie haben `lenght` und Indexe als Eigenschaften, aber könnten auch andere nichtnumerischen Eigenschaften und Methoden enthalten, welche wir normalerweise nicht brauchen. Der Loop `for..in` wird diese jedoch auflisten. Also falls wir mit "array-ähnlichen" Objekten arbeiten müssen, dann diese "extra" Eigenschaften könnten ein Problem werden.
 
-2. Der Loop `for..in` ist optimiert für generelle Ojekte, nicht Arrays, und ist deswegen 10-100 Mal langsamer. Ja klar, er ist immer noch sehr schnell. Es spielt wahrscheinlich nur bei Engpässen eine Rolle, aber trotzdem sollten wir uns die Unterschiede im Kopf behalten.
+2. Der Loop `for..in` ist optimiert für generelle Objekte, nicht Arrays, und ist deswegen 10-100 Mal langsamer. Ja klar, er ist immer noch sehr schnell. Es spielt wahrscheinlich nur bei Engpässen eine Rolle, aber trotzdem sollten wir uns die Unterschiede im Kopf behalten.
 
 Im Allgemeinen sollten wir keine `for..in` Loops für Arrays verwenden
 
 
 ## Ein Wort über `length` (Länge)
 
-Die Eigenschaft `length` aktualisiert automatisch, sobald wir einen Array ändern. Um genau zu sein, es ist eigentlich nicht die Anzahl von Werten in einem Array sondern der grösste numerische Index plus eins.
+Die Eigenschaft `length` aktualisiert automatisch, sobald wir einen Array ändern. Um genau zu sein, es ist eigentlich nicht die Anzahl von Werten in einem Array, sondern der grösste numerische Index plus eins.
 
 Zum Beispiel, ein einzelnes Element mit einem grossen Index gibt eine grosse `lenght` zurück:
 
@@ -340,7 +340,7 @@ Bedenke, dass wir normalerweise Arrays nicht wie hier gezeigt benutzen.
 
 Etwas anderes Interessantes über die Eigenschaft `lenght`: Es ist schreibbar.
 
-Wenn wir es manuell erhöhen, nichts Spezielles passiert. Wenn wir es jedoch verringern, wird das Array gekürzt. Dieser Prozess kann man nicht wieder Rückgängig machen. Hier ist ein Beispiel:
+Wenn wir es manuell erhöhen, nichts Spezielles passiert. Wenn wir es jedoch verringern, wird das Array gekürzt. Dieser Prozess kann man nicht wieder rückgängig machen. Hier ist ein Beispiel:
 
 ```js run
 let arr = [1, 2, 3, 4, 5];
@@ -363,7 +363,7 @@ Es gibt eine weitere Syntax, um ein neues Array zu erstellen.
 let arr = *!*new Array*/!*("Apfel", "Birne", "usw");
 ```
 
-Dies wird eher selten verwenden, weil die eckigen Klammer kürzer sind. Auch bringt es ein verzwicktes Merkmal mit sich.
+Dies wird eher selten verwenden, weil die eckigen Klammern kürzer sind. Auch bringt es ein verzwicktes Merkmal mit sich.
 
 Wenn `new Array` mit einem einzigen Argument (also eine Nummer) aufgerufen wird, erstellt es ein Array *ohne Werte, aber mit der gegebenen Länge*.
 
@@ -383,7 +383,7 @@ Um solch einer Überraschung aus dem Wege zu gehen, werden eckige Klammern benut
 
 ## Multidimensionale Arrays
 
-Arrays können Elemente enthalten, die ebenfalls Arrays sind. Dies können wir gebrauchen, um multidimensionale Arrays zu erstellen. So können wir zum Beispeil Matrize speichern:
+Arrays können Elemente enthalten, die ebenfalls Arrays sind. Dies können wir gebrauchen, um multidimensionale Arrays zu erstellen. So können wir zum Beispiel Matrize speichern:
 
 ```js run
 let matrix = [
@@ -417,9 +417,9 @@ alert( [1] + 1 ); // "11"
 alert( [1,2] + 1 ); // "1,21"
 ```
 
-Arrays haben kein `Symbol.toPrimitive` sowie auch nicht ein viabels `valueOf`. Sie implementieren nur Konversationen mit `toString`, deswegen wird hier `[]` ein leerer String, `[1]` wird eine `"1"` und `[1,2]` wird `"1,2"`.
+Arrays haben kein `Symbol.toPrimitive` sowie auch nicht ein viables `valueOf`. Sie implementieren nur Konversationen mit `toString`, deswegen wird hier `[]` ein leerer String, `[1]` wird eine `"1"` und `[1,2]` wird `"1,2"`.
 
-Wenn der binäre Plus `"+"` Operator etwas zu einem String hinzufügt, konvertiert es dies ebenso in einen String, heisst der nächste Schritt sieht aus wie folgt:
+Wenn der binäre Operator Plus `"+"` etwas zu einem String hinzufügt, konvertiert es dies ebenso in einen String, heisst der nächste Schritt sieht aus wie folgt:
 
 ```js run
 alert( "" + 1 ); // "1"
@@ -429,7 +429,7 @@ alert( "1,2" + 1 ); // "1,21"
 
 ## Zusammenfassung
 
-Arrays sind eine spezielle Art von Objekt, passend um geordente Daten zu speichern und verwalten.
+Arrays sind eine spezielle Art von Objekt und werden für das Speichern und Verwalten geordneter Daten verwendet.
 
 - Die Deklaration:
 
@@ -443,7 +443,7 @@ Arrays sind eine spezielle Art von Objekt, passend um geordente Daten zu speiche
 
     Der Aufruf `new Array(Nummer)` erstellt ein Array mit der gegebenen Länge und keinen Elementen.
 
-- Die Eigenschaft `length` ist die Länge eines Arrays oder genauer gesagt, es ist der letzte numerische Index plus eins.  Es wir automatisch bei eine Änderung am Array aktualisiert.
+- Die Eigenschaft `length` ist die Länge eines Arrays oder genauer gesagt, es ist der letzte numerische Index plus eins.  Es wird automatisch bei einer Änderung am Array aktualisiert.
 - Wenn wir `lenght` manuell verringern, wird das Array verkürzt.
 
 Wir können Arrays als ein Deque mit folgenden Operatoren gebrauchen:
